@@ -1,4 +1,4 @@
-package truglobal;
+package com.truglobal;
 
 import java.text.ParseException;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package oaknorth;
+package com.oaknorth;
 
 import java.io.IOException;
 import java.util.Arrays;

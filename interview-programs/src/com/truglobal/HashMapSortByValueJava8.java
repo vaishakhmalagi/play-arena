@@ -1,4 +1,4 @@
-package truglobal;
+package com.truglobal;
 
 import java.util.Collections;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package oaknorth;
+package com.oaknorth;
 
 import java.util.Scanner;
 /*Find max number of subset possible which has  all the elements

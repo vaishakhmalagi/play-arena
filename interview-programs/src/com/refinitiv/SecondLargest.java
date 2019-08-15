@@ -1,4 +1,4 @@
-package refinitiv;
+package com.refinitiv;
 
 public class SecondLargest {
 	 
