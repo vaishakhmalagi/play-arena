@@ -1,28 +1,28 @@
 package com.java.threads.concurrency;
 
-public class Waiter implements Runnable{
-    
-    private Message msg;
-    
-    public Waiter(Message m){
-        this.msg=m;
-    }
+public class Waiter implements Runnable {
 
-    @Override
-    public void run() {
-        String name = Thread.currentThread().getName();
-        synchronized (msg) {
-            try{
-                System.out.println(name+" waiting to get notified at time:"+System.currentTimeMillis());
-                msg.wait();
-                //Thread.sleep(10000);
-            }catch(InterruptedException e){
-                e.printStackTrace();
-            }
-            System.out.println(name+" waiter thread got notified at time:"+System.currentTimeMillis());
-            //process the message now
-            System.out.println(name+" processed: "+msg.getMsg());
-        }
-    }
+	private Message msg;
+
+	public Waiter(Message m) {
+		this.msg = m;
+	}
+
+	@Override
+	public void run() {
+		String name = Thread.currentThread().getName();
+		synchronized (msg) {
+			try {
+				System.out.println(name + " waiting to get notified at time:" + System.currentTimeMillis());
+				msg.wait();
+				// Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println(name + " waiter thread got notified at time:" + System.currentTimeMillis());
+			// process the message now
+			System.out.println(name + " processed: " + msg.getMsg());
+		}
+	}
 
 }

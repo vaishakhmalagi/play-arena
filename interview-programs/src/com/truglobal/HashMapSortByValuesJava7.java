@@ -12,16 +12,14 @@ import java.util.Set;
 import java.util.TreeMap;
 
 /**
- * How to sort HashMap in Java by keys and values. 
- * HashMap doesn't guarantee any order, so you cannot rely on it, even if
- * it appear that it storing entries in a particular order, because
- * it may not be available in future version e.g. earlier HashMap stores
- * integer keys on the order they are inserted but from Java 8 it has changed.
- * 
- * @author WINDOWS 8
+ * @author Vaishakh Malagi How to sort HashMap in Java by keys and values.
+ *         HashMap doesn't guarantee any order, so you cannot rely on it, even
+ *         if it appear that it storing entries in a particular order, because
+ *         it may not be available in future version e.g. earlier HashMap stores
+ *         integer keys on the order they are inserted but from Java 8 it has
+ *         changed.
  */
-
-public class HashMapSortByValuesJava7{
+public class HashMapSortByValuesJava7 {
 
 	public static void main(String args[]) throws ParseException {
 
@@ -39,29 +37,28 @@ public class HashMapSortByValuesJava7{
 		System.out.println("HashMap before sorting, random order ");
 		Set<Entry<String, String>> entries = codenames.entrySet();
 
-		for(Entry<String, String> entry : entries){
+		for (Entry<String, String> entry : entries) {
 			System.out.println(entry.getKey() + " ==> " + entry.getValue());
 		}
 
-		// Now let's sort HashMap by keys first 
+		// Now let's sort HashMap by keys first
 		// all you need to do is create a TreeMap with mappings of HashMap
 		// TreeMap keeps all entries in sorted order
 		TreeMap<String, String> sorted = new TreeMap<>(codenames);
 		Set<Entry<String, String>> mappings = sorted.entrySet();
 
 		System.out.println("HashMap after sorting by keys in ascending order ");
-		for(Entry<String, String> mapping : mappings){
+		for (Entry<String, String> mapping : mappings) {
 			System.out.println(mapping.getKey() + " ==> " + mapping.getValue());
 		}
-
 
 		// Now let's sort the HashMap by values
 		// there is no direct way to sort HashMap by values but you
 		// can do this by writing your own comparator, which takes
-		// Map.Entry object and arrange them in order increasing 
+		// Map.Entry object and arrange them in order increasing
 		// or decreasing by values.
 
-		Comparator<Entry<String, String>> valueComparator = new Comparator<Entry<String,String>>() {
+		Comparator<Entry<String, String>> valueComparator = new Comparator<Entry<String, String>>() {
 
 			@Override
 			public int compare(Entry<String, String> e1, Entry<String, String> e2) {
@@ -80,16 +77,15 @@ public class HashMapSortByValuesJava7{
 		LinkedHashMap<String, String> sortedByValue = new LinkedHashMap<String, String>(listOfEntries.size());
 
 		// copying entries from List to Map
-		for(Entry<String, String> entry : listOfEntries){
+		for (Entry<String, String> entry : listOfEntries) {
 			sortedByValue.put(entry.getKey(), entry.getValue());
 		}
 
 		System.out.println("HashMap after sorting entries by values ");
 		Set<Entry<String, String>> entrySetSortedByValue = sortedByValue.entrySet();
 
-		for(Entry<String, String> mapping : entrySetSortedByValue){
+		for (Entry<String, String> mapping : entrySetSortedByValue) {
 			System.out.println(mapping.getKey() + " ==> " + mapping.getValue());
 		}
 	}
 }
-
